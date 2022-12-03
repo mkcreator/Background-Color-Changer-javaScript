@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        padding: 300px 500px;
+
+    }
+
+    #btn {
+        padding: 8px 22px;
+        margin-left: 130px;
+        background-color: black;
+        border-radius: 12px;
+        color: white;
+        font-size: 15px;
+        cursor: pointer;
+
+    }
+
+    .color {
+        font-size: 20px;
+        padding: 20px;
+        border: 2px solid black;
+        width: 350px;
+        height: 25px;
+        display: inline-flex;
+
+    }
+</style>
+
+<body>
+    <div class="color"> Background-color : <span id="rgb">0</span> </div> <br><br><br>
+    <button id="btn">Color Change</button>
+
+    <script>
+        let btn = document.getElementById('btn');
+        btn.addEventListener('click', function () {
+
+            const red = Math.floor(Math.random() * 255)
+            const green = Math.floor(Math.random() * 255)
+            const blue = Math.floor(Math.random() * 255)
+            // rgb(155, 233, 122)
+            let color = `rgb(${red}, ${green}, ${blue})`
+            document.body.style.backgroundColor = color;
+            let A = color.valueOf("rgb")
+            document.getElementById('rgb').innerHTML = A;
+        });
+    </script>
+</body>
+
+</html>
